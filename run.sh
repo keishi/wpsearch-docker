@@ -18,4 +18,4 @@ if [ ! -d "$DIRECTORY" ]; then
     sudo chown -R 1000:100 $DIR
 fi
 
-sudo docker run -it --rm -m 30G -e WPSEARCH_PORT=$WP_PORT -p $WP_PORT:8081 -p $JP_PORT:8888 -v $DIR:/home/jovyan wpsearch-img
+sudo docker run -it --rm -m 30G --name="wp-$ID" -e WPSEARCH_PORT=$WP_PORT -p $WP_PORT:8081 -p $JP_PORT:8888 -v $DIR:/home/jovyan wpsearch-img
